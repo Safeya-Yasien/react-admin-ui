@@ -12,6 +12,12 @@ a {
   color: inherit;
 }
 
+ul{
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
 .main {
   font-family: "Inter", sans-serif;
   background-color: $main-bg;

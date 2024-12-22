@@ -1,4 +1,4 @@
-@import "../../styles/responsive.scss";
+@import "../../styles/global.scss";
 
 .navbar {
   width: 100%;
@@ -16,9 +16,14 @@
   .icons {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
 
     .icon {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      color: $main-color;
+      font-size: 20px;
       @include sm {
         display: none;
       }

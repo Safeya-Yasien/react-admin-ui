@@ -1,29 +1,52 @@
+import { Link } from "react-router";
 import "./navbar.scss";
+import { FaBell, FaMagnifyingGlass } from "react-icons/fa6";
+import { IoGridOutline, IoScan, IoSettingsOutline } from "react-icons/io5";
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="logo">
+      <Link to="/" className="logo">
         <img src="logo.svg" alt="" />
         <span>lamadmin</span>
-      </div>
-      <div className="icons">
-        <img src="/search.svg" alt="" className="icon" />
-        <img src="/app.svg" alt="" className="icon" />
-        <img src="/expand.svg" alt="" className="icon" />
-        <div className="notification">
-          <img src="/notifications.svg" alt="" />
-          <span>1</span>
-        </div>
-        <div className="user">
-          <img
-            src="https://images.pexels.com/photos/11038549/pexels-photo-11038549.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt=""
-          />
-          <span>Jane</span>
-        </div>
-        <img src="/settings.svg" alt="" className="icon" />
-      </div>
+      </Link>
+      <ul className="icons">
+        <li>
+          <button className="icon">
+            <FaMagnifyingGlass />
+          </button>
+        </li>
+        <li>
+          <button className="icon">
+            <IoGridOutline />
+          </button>
+        </li>
+        <li>
+          <button className="icon">
+            <IoScan />
+          </button>
+        </li>
+        <li>
+          <button className="icon notification">
+            <FaBell />
+            <span>1</span>
+          </button>
+        </li>
+        <li className="">
+          <Link to="/" className="user">
+            <img
+              src="https://images.pexels.com/photos/11038549/pexels-photo-11038549.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+              alt=""
+            />
+            <span>Jane</span>{" "}
+          </Link>
+        </li>
+        <li>
+          <button className="icon notification">
+            <IoSettingsOutline />
+          </button>
+        </li>
+      </ul>
     </div>
   );
 };
