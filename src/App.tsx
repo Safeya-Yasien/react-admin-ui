@@ -7,7 +7,9 @@ import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
 import Login from "./pages/login/Login";
 
-import './styles/global.scss'
+import "./styles/global.scss";
+import Product from "./pages/product/Product";
+import User from "./pages/user/User";
 
 const Layout = () => {
   return (
@@ -34,6 +36,15 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/users", element: <Users /> },
       { path: "/products", element: <Products /> },
+      {
+        path: "/users/:id",
+        element: <User />,
+      },
+      {
+        path: "/products/:id",
+        element: <Product />,
+      },
+      { path: "/product", element: <Product /> },
     ],
   },
   {
