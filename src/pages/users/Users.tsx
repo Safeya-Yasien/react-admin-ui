@@ -54,17 +54,17 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
   },
 ];
 
-const apiUrl = import.meta.env.REACT_APP_API_URL;
+// const apiUrl = import.meta.env.REACT_APP_API_URL;
 
 const Users = () => {
   const [open, setOpen] = useState(false);
 
-  const { isPending, data } = useQuery({
-    queryKey: ["allusers"],
-    queryFn: () => fetch(`${apiUrl}/users`).then((res) => res.json()),
-  });
+  // const { isPending, data } = useQuery({
+  //   queryKey: ["allusers"],
+  //   queryFn: () => fetch(`${apiUrl}/users`).then((res) => res.json()),
+  // });
 
-  if (isPending) return "Loading...";
+  // if (isPending) return "Loading...";
 
   return (
     <div className="users">
@@ -72,7 +72,8 @@ const Users = () => {
         <h1>Users</h1>
         <button onClick={() => setOpen(true)}>Add New User</button>
       </div>
-      <DataTable slug="users" columns={columns} rows={data} />
+      {/* <DataTable slug="users" columns={columns} rows={data} /> */}
+      <DataTable slug="users" columns={columns} rows={userRows} />
       {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
     </div>
   );

@@ -1,6 +1,6 @@
 import { GridColDef } from "@mui/x-data-grid";
 import "./add.scss";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+// import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 type TAddProps = {
   slug: string;
@@ -8,43 +8,42 @@ type TAddProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const apiUrl = import.meta.env.REACT_APP_API_URL;
-console.log(apiUrl);
+// const apiUrl = import.meta.env.REACT_APP_API_URL;
+
 
 const Add = ({ slug, columns, setOpen }: TAddProps) => {
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation({
-    mutationFn: () => {
-      return fetch(`${apiUrl}/${slug}s`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: 555,
-          img: "",
-          firstName: "Safeya",
-          lastName: "Yasien",
-          email: "sarah.johnson@example.com",
-          phone: "125 85 999",
-          createdAt: "28.12.2024",
-          verified: true,
-        }),
-      });
-    },
-    onSuccess: () => {
-      // update the table data
-      queryClient.invalidateQueries({
-        queryKey: [`all${slug}s`],
-      });
-    },
-  });
+  // const queryClient = useQueryClient();
+  // const mutation = useMutation({
+  //   mutationFn: () => {
+  //     return fetch(`${apiUrl}/${slug}s`, {
+  //       method: "post",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         id: 555,
+  //         img: "",
+  //         firstName: "Safeya",
+  //         lastName: "Yasien",
+  //         email: "sarah.johnson@example.com",
+  //         phone: "125 85 999",
+  //         createdAt: "28.12.2024",
+  //         verified: true,
+  //       }),
+  //     });
+  //   },
+  //   onSuccess: () => {
+  //     // update the table data
+  //     queryClient.invalidateQueries({
+  //       queryKey: [`all${slug}s`],
+  //     });
+  //   },
+  // });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    mutation.mutate();
+    // mutation.mutate();
 
     setOpen(false);
   };
