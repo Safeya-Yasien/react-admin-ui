@@ -4,7 +4,7 @@ import "./users.scss";
 import { userRows } from "../../data";
 import { useState } from "react";
 import Add from "../../components/add/Add";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 
 const columns: GridColDef<(typeof userRows)[number]>[] = [
   { field: "id", headerName: "ID", width: 90 },
