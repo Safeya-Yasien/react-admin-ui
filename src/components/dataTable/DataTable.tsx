@@ -20,7 +20,9 @@ const DataTable = ({ columns, rows, slug }: TDataTableProps) => {
     },
     onSuccess: () => {
       // update the table data
-      queryClient.invalidateQueries([`all${slug}`]);
+      queryClient.invalidateQueries({
+        queryKey: [`all${slug}`],
+      });
     },
   });
 
