@@ -54,13 +54,14 @@ const columns: GridColDef<(typeof userRows)[number]>[] = [
   },
 ];
 
+const apiUrl = import.meta.env.REACT_APP_API_URL;
+
 const Users = () => {
   const [open, setOpen] = useState(false);
 
   const { isPending, data } = useQuery({
     queryKey: ["allusers"],
-    queryFn: () =>
-      fetch("http://localhost:8800/api/users").then((res) => res.json()),
+    queryFn: () => fetch(`${apiUrl}/users`).then((res) => res.json()),
   });
 
   if (isPending) return "Loading...";
