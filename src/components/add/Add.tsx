@@ -8,12 +8,15 @@ type TAddProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+const apiUrl = import.meta.env.REACT_APP_API_URL;
+console.log(apiUrl);
+
 const Add = ({ slug, columns, setOpen }: TAddProps) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: () => {
-      return fetch(`http://localhost:8800/api/${slug}s`, {
+      return fetch(`${apiUrl}/${slug}s`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
