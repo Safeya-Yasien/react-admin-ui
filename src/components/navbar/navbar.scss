@@ -19,6 +19,13 @@
     gap: 20px;
 
     .icon {
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border: none;
+      outline: none;
+
       @include sm {
         display: none;
       }
